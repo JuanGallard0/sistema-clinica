@@ -1,0 +1,28 @@
+﻿@model List<SistemaClinica.Models.Consulta>
+
+@{
+    ViewBag.Title = "Consultas";
+}
+
+<h2>Lista de consultas pasadas</h2>
+<div class="mb-3">
+
+</div>
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>Paciente</th>
+        <th>Médico</th>
+        <th>Diagnóstico</th>
+        <th>Tratamiento</th>
+    </tr>
+    <tr>
+    @foreach (var consulta in Model)
+    {
+        <td>@consulta.Paciente.Nombre @consulta.Paciente.Apellido </td>
+        <td>@consulta.Medico.Nombre @consulta.Medico.Apellido</td>
+        <td>@consulta.Diagnostico</td>
+        <td>@consulta.Tratamiento</td>
+    }
+</tr>
+</table>
+

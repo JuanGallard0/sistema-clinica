@@ -1,0 +1,34 @@
+﻿@model SistemaClinica.Models.Cita
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Nueva Cita</h2>
+
+<div class="mb-3">
+    @Html.ActionLink("Regresar a lista", "Index")
+</div>
+
+@using (Html.BeginForm("Create", "Citas", FormMethod.Post, new { enctype = "application/x-www-form-urlencoded" }))
+{
+    <table class="table">
+        <tr>
+            <td><label class="form-label">Seleccionar Paciente</label></td>
+            <td>@Html.DropDownListFor(Model => Model.IdPaciente, ViewBag.dropdownPacientes as SelectList, "", new {@class="form-select"})</td>
+        </tr>
+        <tr>
+            <td><label class="form-label">Seleccionar Medico</label></td>
+            <td>@Html.DropDownListFor(Model => Model.IdMedico, ViewBag.dropdownMedicos as SelectList, "", new {@class="form-select"})</td>
+        </tr>
+        <tr>
+            <td><label class="form-label">Día y Hora</label></td>
+            <td>@Html.EditorFor(Model => Model.FechaHora, new { htmlattributes = new { @class = "form-control datepicker", type = "datetime-local"}})</td>
+        </tr>
+        <tr class="colspan-2">
+            <td><input type="submit" name="submit" value="Agregar Cita" class="btn btn-success text-center"/></td>
+        </tr>
+    </table>
+}
+

@@ -1,0 +1,35 @@
+﻿@model SistemaClinica.ViewModels.CitaConsultaViewData
+
+<h2>CompletarCita</h2>
+
+<dl class="dl-horizontal">
+    <dt>Paciente</dt>
+    <dd>@Model.Cita.Paciente.Nombre @Model.Cita.Paciente.Apellido</dd>
+    <dt>Médico a cargo</dt>
+    <dd>@Model.Cita.Medico.Nombre @Model.Cita.Medico.Apellido</dd>
+    <dt>Fecha y Hora</dt>
+    <dd>@Model.Cita.FechaHora.Value.Date.ToShortDateString() a las @Model.Cita.FechaHora.Value.TimeOfDay</dd>
+</dl>
+
+<hr />
+
+<h2>Detalles de la consulta</h2>
+
+@using (Html.BeginForm("Create", "Consultas", new { @idCita = Model.Consulta.IdCita }, FormMethod.Post, new { enctype = "application/x-www-form-urlencoded" }))
+{
+    <table class="table">
+        <tr>
+            <td><label class="form-label">Diagnóstico</label></td>
+            <td>@Html.TextAreaFor(Model => Model.Consulta.Diagnostico, new { @class = "form-control" })</td>
+
+        </tr>
+        <tr>
+            <td><label class="form-label">Tratamiento</label></td>
+            <td>@Html.TextAreaFor(Model => Model.Consulta.Tratamiento, new { @class = "form-control" })</td>
+        </tr>
+        <tr class="colspan-2">
+            <td><input type="submit" name="submit" value="Guardar" class="btn btn-success text-center"/></td>
+        </tr>
+    </table>
+}
+@Html.ActionLink("Cancelar Cita", "CancelarCita", "Citas", new { @idCita = Model.Consulta.IdCita }, new { @class ="btn btn-danger" })

@@ -1,0 +1,45 @@
+﻿@model List<SistemaClinica.Models.Cita>
+
+@{
+    ViewBag.Title = "Citas";
+}
+
+<h2>Lista de citas</h2>
+<div class="mb-3">
+    <a href="@Url.Action("Create", "Citas")" class="btn btn-primary">Agregar Cita</a>
+</div>
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>Paciente</th>
+        <th>Médico</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </tr>
+    <tr>
+    @foreach (var cita in Model)
+    {
+        <td>@cita.Paciente.Nombre @cita.Paciente.Apellido </td>
+        <td>@cita.Medico.Nombre @cita.Medico.Apellido</td>
+        <td>@cita.FechaHora.Value.Date.ToShortDateString() </td>
+        <td>@cita.FechaHora.Value.TimeOfDay.</td>
+        <td>@cita.Estado</td>
+        switch (cita.Estado)
+        {
+            case "Completada":
+                    <td class="text-success">@cita.Estado</td>
+                break;
+            case "Pendiente":
+                    <td class="text-warning">@cita.Estado</td>
+                break;
+            case "Cancelada":
+                    <td class="text-danger">@cita.Estado</td>
+                break;
+
+        }
+        <td>@Html.ActionLink("Completar Registro", "CompletarCita", "Citas", new { @idCita = cita.IdCita }, new { @class ="btn btn-secondary" })</td>
+    }
+</tr>
+</table>
+

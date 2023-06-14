@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaClinica", "SistemaClinica\SistemaClinica.csproj", "{54140D9C-1E1B-4784-86F7-3FA5C44ECBFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaClinica.Tests", "SistemaClinica.Tests\SistemaClinica.Tests.csproj", "{9FFEC391-AC7A-43CD-AC5F-C153C0A8187C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54140D9C-1E1B-4784-86F7-3FA5C44ECBFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54140D9C-1E1B-4784-86F7-3FA5C44ECBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54140D9C-1E1B-4784-86F7-3FA5C44ECBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54140D9C-1E1B-4784-86F7-3FA5C44ECBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FFEC391-AC7A-43CD-AC5F-C153C0A8187C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FFEC391-AC7A-43CD-AC5F-C153C0A8187C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FFEC391-AC7A-43CD-AC5F-C153C0A8187C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FFEC391-AC7A-43CD-AC5F-C153C0A8187C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D56DC2C-785F-4520-BAEB-F8240D29DD63}
+	EndGlobalSection
+EndGlobal
